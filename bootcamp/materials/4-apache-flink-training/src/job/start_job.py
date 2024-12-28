@@ -57,6 +57,7 @@ def create_processed_events_sink_postgres(t_env):
     return table_name
 
 class GetLocation(ScalarFunction):
+# @udf( result_type=DataTypes.STRING())
   def eval(self, ip_address):
     url = "https://api.ip2location.io"
     response = requests.get(url, params={
